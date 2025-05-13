@@ -44,6 +44,8 @@ public class TitleScreen extends World
         Label label = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label,300,200);
         Label label2 = new Label("Press <space> to Start", 40);
-        addObject(label2,300,300);
+        addObject(label2,300,275);
+        Label label3 = new Label("Use a and d to for - and + speed", 40);
+        addObject(label3,300, 350);
     }
 }
