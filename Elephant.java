@@ -61,6 +61,7 @@ public class Elephant extends Actor
     
     public void act()
     {
+        if (MyWorld.gameOver == true) return;
         if (Greenfoot.isKeyDown("left")) {
             move(-speed);
             facing = "left";
