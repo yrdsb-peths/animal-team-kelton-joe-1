@@ -36,6 +36,7 @@ public class Elephant extends Actor
     /**
      *  Animate the elephant
      */
+    
     int imageIndex = 0;
     public void animateElephant() {
         if (animationTimer.millisElapsed() < 100) {
@@ -50,15 +51,42 @@ public class Elephant extends Actor
         }
     }
     
+    // base elephant speed of 4
+    int speed = 4;
+    int maxSpeed = 15;
+    
+    // speed change timer cooldown
+    int cooldownTime = 15;
+    int cooldownTimer = 0;
+    
     public void act()
     {
         if (Greenfoot.isKeyDown("left")) {
-            move(-2);
+            move(-speed);
             facing = "left";
         } else if (Greenfoot.isKeyDown("right")) {
-            move(2);
+            move(speed);
             facing = "right";
         }
+        
+        if (cooldownTimer > 0) {
+            cooldownTimer --;
+        }
+    
+        if (Greenfoot.isKeyDown("a") && cooldownTimer == 0) {
+            speed--;
+            cooldownTimer = cooldownTime;
+        }
+        else if (Greenfoot.isKeyDown("d") && cooldownTimer == 0) {
+            speed++;
+            cooldownTimer = cooldownTime;
+        }
+        
+        /**
+         * ruin the fun
+         */
+        if (speed < 0) speed *= -1; 
+        if (speed >= maxSpeed) speed = maxSpeed;
         
         //Remove apple if elephant eats it
         eat();
