@@ -5,6 +5,8 @@ public class MyWorld extends World {
     Label scoreLabel;
     int level = 1;
     
+    static Boolean gameOver = false;
+    
     SimpleTimer appleTimer;
     
     public MyWorld() {
@@ -36,6 +38,8 @@ public class MyWorld extends World {
     public void gameOver() {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        
+        gameOver = true;
     }
     
     /**
