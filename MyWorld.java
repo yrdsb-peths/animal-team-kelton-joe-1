@@ -5,6 +5,8 @@ public class MyWorld extends World {
     Label scoreLabel;
     int level = 1;
     
+    SimpleTimer appleTimer;
+    
     public MyWorld() {
         super(600, 400, 1, false);
         
@@ -16,7 +18,16 @@ public class MyWorld extends World {
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
+        appleTimer = new SimpleTimer();
+        appleTimer.mark();
         createApple();
+    }
+    
+    public void act() {
+        if (appleTimer.millisElapsed() > 5000) {
+            appleTimer.mark();
+            createApple();
+        }
     }
     
     /**
