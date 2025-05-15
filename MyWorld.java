@@ -9,23 +9,35 @@ public class MyWorld extends World {
     
     SimpleTimer appleTimer;
     
+    /**
+     * Creates the world
+     */
     public MyWorld() {
+        // size 600 x 400
         super(600, 400, 1, false);
         
+        // sets the background
         setBackground(new GreenfootImage("savannah.jpg"));
         
+        // creates the elephant
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 300);
         
+        // adds the score label
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
+        // creates apples
         appleTimer = new SimpleTimer();
         appleTimer.mark();
         createApple();
     }
     
+    /**
+     * Function for creating apples
+     */
     public void act() {
+        // creates apples every few seconds
         if (appleTimer.millisElapsed() > 5000) {
             appleTimer.mark();
             createApple();
@@ -36,6 +48,7 @@ public class MyWorld extends World {
      * End the game and draw 'GameOver'
      */
     public void gameOver() {
+        // game over label
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
         
@@ -58,10 +71,15 @@ public class MyWorld extends World {
      * Create a new apple at random location at top of the screen
      */
     public void createApple() {
+        // creates a new object
         Apple apple = new Apple();
         apple.setSpeed(level);
+        
+        // random starting x pos of apple and constant starting y pos
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
+        
+        // adds the object into the world
         addObject(apple, x, y);
     }
 }
