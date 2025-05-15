@@ -11,7 +11,6 @@ public class TitleScreen extends World
     Label titleLabel = new Label("Hungry Elephant", 60);
     /**
      * Constructor for objects of class TitleScreen.
-     * 
      */
     public TitleScreen()
     {    

@@ -10,10 +10,16 @@ public class Apple extends Actor
 {
     int speed = 1;
     
+    /**
+     * sets the image of the apple
+     */
     public Apple() {
         setImage("images/apple1.png");
     }
     
+    /**
+     * move function for the apple
+     */
     public void act()
     {
         int x = getX();
@@ -29,6 +35,11 @@ public class Apple extends Actor
         }
     }
     
+    /**
+     * changes the speed of the apple
+     * 
+     * @param speed - the speed of the apple
+     */
     public void setSpeed(int speed) {
         this.speed = speed;
     }

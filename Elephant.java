@@ -15,6 +15,9 @@ public class Elephant extends Actor
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
     
+    /**
+     * constructor for elephant
+     */
     public Elephant() {
         for (int i = 0; i < idleRight.length; i++) {
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
@@ -59,6 +62,9 @@ public class Elephant extends Actor
     int cooldownTime = 15;
     int cooldownTimer = 0;
     
+    /**
+     * moves the elephant when the controlled by the user
+     */
     public void act()
     {
         if (MyWorld.gameOver == true) return;
