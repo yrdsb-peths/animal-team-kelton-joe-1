@@ -5,7 +5,7 @@ public class MyWorld extends World {
     Label scoreLabel;
     int level = 1;
     
-    static Boolean gameOver = false;
+    static boolean gameOver = false;
     
     SimpleTimer appleTimer;
     
