@@ -56,7 +56,7 @@ public class Elephant extends Actor
     
     // base elephant speed of 4
     int speed = 4;
-    int maxSpeed = 18;
+    int maxSpeed = 15;
     
     // speed change timer cooldown
     int cooldownTime = 15;
