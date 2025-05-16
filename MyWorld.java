@@ -42,6 +42,13 @@ public class MyWorld extends World {
             appleTimer.mark();
             createApple();
         }
+        
+        if (Greenfoot.isKeyDown("r") && gameOver == true) {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+            
+            gameOver = false;
+        }
     }
     
     /**
@@ -50,7 +57,9 @@ public class MyWorld extends World {
     public void gameOver() {
         // game over label
         Label gameOverLabel = new Label("Game Over", 100);
+        Label restartLabel = new Label("Press r to restart the game", 40);
         addObject(gameOverLabel, 300, 200);
+        addObject(restartLabel, 300, 250);
         
         gameOver = true;
     }
