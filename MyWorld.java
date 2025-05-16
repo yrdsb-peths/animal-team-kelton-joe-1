@@ -16,6 +16,8 @@ public class MyWorld extends World {
         // size 600 x 400
         super(600, 400, 1, false);
         
+        gameOver = false;
+        
         // sets the background
         setBackground(new GreenfootImage("savannah.jpg"));
         
